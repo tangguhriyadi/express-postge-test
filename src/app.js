@@ -1,8 +1,12 @@
 const express = require('express');
+const setupDb = require('./db/db-setup')
+
+setupDb()
+
 const app = express()
+app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.send('Wellcome to my API')
-})
+app.get('/', () => 'Wellcome !')
 
-app.listen(3000)
+
+app.listen(3000, () => console.log('server running on port 3000'))

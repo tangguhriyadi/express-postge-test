@@ -5,11 +5,16 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon ./src/app.js",
+    "migrate": "npx knex migrate:latest --knexfile ./src/db/knexfile.js",
+    "make-seed": "npx knex seed:make dev --knexfile ./src/db/knexfile.js",
+    "seed": "npx knex seed:run --knexfile ./src/db/knexfile.js",
+    "down": "npx knex migrate:down --knexfile ./src/db/knexfile.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "objection": "^3.0.1"
   }
 }
