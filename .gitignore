@@ -1,0 +1,12 @@
+node_modules
+.env*
+app.json
+
+docker-compose.yml
+ecosystem.config.js
+
+coverage
+uploads
+src/mail_templates
+
+package-lock.json
