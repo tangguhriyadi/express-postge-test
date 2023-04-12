@@ -1,3 +1,4 @@
+const { Model } = require("objection");
 class OrderDetail extends Model {
     static get tableName() {
       return 'order_detail';
@@ -11,6 +12,7 @@ class OrderDetail extends Model {
                 product_id: { type: "integer" },
                 order_id: { type: "integer" },
                 payment_method_id: { type: "integer" },
+                quantity: {type: "integer"}
             },
         };
     }

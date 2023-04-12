@@ -11,7 +11,7 @@ exports.up = function(knex) {
       .createTable('customer_address', function(table) {
         table.increments('id').primary();
         table.integer('customer_id').unsigned().references('id').inTable('customer');
-        table.date('address');
+        table.string('address');
       })
       .createTable('product', function(table) {
         table.increments('id').primary();
@@ -33,6 +33,7 @@ exports.up = function(knex) {
         table.integer('order_id').unsigned().references('id').inTable('order');
         table.integer('payment_method_id').unsigned().references('id').inTable('payment_method');
         table.primary(['product_id', 'order_id']);
+        table.integer('quantity')
       })
       .createTable('customer_order', function(table) {
         table.integer('customer_id').unsigned().references('id').inTable('customer');
