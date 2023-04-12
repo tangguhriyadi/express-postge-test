@@ -1,5 +1,8 @@
 # express-postge-test
 
+## Installing Package ##
+npm install
+
 ## Running Development Server ##
 npm start
 
